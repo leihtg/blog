@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "使用 GitHub Pages + jekyll 的方式建站"
+tags:  建站
+author: leihtg
+---
+
+* content
+{:toc}
+
+使用 GitHub Pages + jekyll 的方式建站
+
+_config.yml ：全局配置文件
+
+_posts :放文章的文件夹
+
+
+简明一下步骤：
++ 一 ：安装Ruby
+	
+	ruby官网下载安装：https://www.ruby-lang.org/en/downloads/
+	
+	安装完成
+>   ruby -v 
+	
++ 二 ：安装RubyGems
+
+	官网下载 http://rubygems.org/pages/download rubygems-2.4.5.zip
+
+	cd到RubyGems目录
+	
+	执行安装
+>  ruby setup.rb
+	
+
++ 三：用RubyGems安装Jekyll
+
+	执行下面的语句安装
+	
+>	gem install jekyll
+	
++ 四：创建博客
+
+>	jekyll new blogDir
+	
+   进入blogDir
+	
+>	cd blogDir
+	
+   执行
+	
+>	jekyll serve --watch
+	
+	
++ 五：访问 http://localhost:4000/
++ 六：提交代码到远程GitHub上
+
