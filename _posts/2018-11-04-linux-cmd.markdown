@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "linux常用命令"
-tags:  Python Java Android PHP  机器学习 小程序
+tags:  Linux
+categories: Linux
 author: leihtg
 ---
 

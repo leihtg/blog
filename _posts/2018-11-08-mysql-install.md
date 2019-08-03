@@ -1,4 +1,12 @@
-###在ubuntu中安装mysql
+---
+layout: post
+title:  "安装mysql"
+date:   2018-11-08 15:30:21 +0800
+categories: MySQL
+tags:  mysql
+---
+
+## 在ubuntu中安装mysql
 
 ubuntu上安装mysql非常简单只需要几条命令就可以完成。
 
@@ -8,7 +16,7 @@ ubuntu上安装mysql非常简单只需要几条命令就可以完成。
 
 第三个是本地开发时动态链接库，可以不安装
 
-###MySQL允许远程访问设置
+### MySQL允许远程访问设置
 
 1. 注释 bind-address = 127.0.0.1
     > sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
