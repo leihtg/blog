@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CentOS7定时任务详解</title>
+    <meta name="description" content="  前言  crontab前言工作中需要开启一个定时任务：每天晚上2点进行爬虫代码的运行，这不得不去学习一下linux 下的定时任务crontabcrontabyum install crontabs说明：/sbin/service crond start //启动服务/sbin/service crond st...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4001/2018/02/10/centos-crontab/">
+    <link rel="alternate" type="application/rss+xml" title="青草池塘的个人博客" href="http://localhost:4001/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?00d133d240200c67135b6c0f4b687b1a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+    <script>
+    // google analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72449510-4', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">青草池塘的个人博客</a>
+        <small>love coding</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>CentOS7定时任务详解</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2018-02-10
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>SnakeSon
+                
+            </div>
+            <div class="label-card">
+                <p><i class="fa fa-eye fa-x"></i><span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Linux" title="Category: Linux" rel="category">Linux</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#centos7" title="Tag: centos7" rel="tag">centos7</a-->
+        <a href="/tag/#centos7" title="Tag: centos7" rel="tag">centos7</a>&nbsp;
+    
+        <!--a href="/tag/#crontab" title="Tag: crontab" rel="tag">crontab</a-->
+        <a href="/tag/#crontab" title="Tag: crontab" rel="tag">crontab</a>&nbsp;
+    
+        <!--a href="/tag/#Linux" title="Tag: Linux" rel="tag">Linux</a-->
+        <a href="/tag/#Linux" title="Tag: Linux" rel="tag">Linux</a>&nbsp;
+    
+        <!--a href="/tag/#%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6" title="Tag: 工具软件" rel="tag">工具软件</a-->
+        <a href="/tag/#工具软件" title="Tag: 工具软件" rel="tag">工具软件</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#前言" id="markdown-toc-前言">前言</a></li>
+  <li><a href="#crontab" id="markdown-toc-crontab">crontab</a></li>
+  <li><a href="#1crontab命令" id="markdown-toc-1crontab命令">1，crontab命令</a></li>
+  <li><a href="#2crontab-格式" id="markdown-toc-2crontab-格式">2，crontab 格式</a></li>
+  <li><a href="#3crontab文件的一些例子" id="markdown-toc-3crontab文件的一些例子">3，crontab文件的一些例子：</a></li>
+  <li><a href="#4-创建cron脚本" id="markdown-toc-4-创建cron脚本">4 创建cron脚本</a></li>
+  <li><a href="#将脚本改为可执行针对shellsh文件" id="markdown-toc-将脚本改为可执行针对shellsh文件">将脚本改为可执行（针对shell，.sh文件）</a></li>
+</ul>
+
+<h2 id="前言">前言</h2>
+
+<p>工作中需要开启一个定时任务：每天晚上2点进行爬虫代码的运行，这不得不去学习一下linux 下的定时任务crontab</p>
+
+<h2 id="crontab">crontab</h2>
+
+<p>yum install crontabs</p>
+
+<p>说明：
+/sbin/service crond start //启动服务
+/sbin/service crond stop //关闭服务
+/sbin/service crond restart //重启服务
+/sbin/service crond reload //重新载入配置
+查看crontab服务状态：service crond status
+手动启动crontab服务：service crond start
+查看crontab服务是否已设置为开机启动，执行命令：ntsysv
+加入开机自动启动:
+chkconfig crond on</p>
+
+<h2 id="1crontab命令">1，crontab命令</h2>
+
+<p>功能说明：设置计时器。
+语　　法：crontab [-u <用户名称>][配置文件] 或 crontab [-u <用户名称>][-elr]</用户名称></用户名称></p>
+
+<p>补充说明：cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使 用计时器的功能。</p>
+
+<p>其配置文件格式如下：
+Minute Hour Day Month DayOFWeek Command</p>
+
+<p>参　　数：
+-e 　编辑该用户的计时器设置。
+-l 　列出该用户的计时器设置。
+-r 　删除该用户的计时器设置。
+-u<用户名称> 　指定要设定计时器的用户名称。</用户名称></p>
+
+<h2 id="2crontab-格式">2，crontab 格式</h2>
+
+<p>基本格式 :</p>
+<ul>
+  <li><em>　 *　 *　 *　　command
+分　时　日　月　周　 命令
+第1列表示分钟1～59 每分钟用</em>或者 */1表示
+第2列表示小时1～23（0表示0点）
+第3列表示日期1～31
+第4列 表示月份1～12
+第5列标识号星期0～6（0表示星期天）
+第6列要运行的命令
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # Use the hash sign to prefix a comment
+  # +—————- minute (0 – 59)
+  # | +————- hour (0 – 23)
+  # | | +———- day of month (1 – 31)
+  # | | | +——- month (1 – 12)
+  # | | | | +—- day of week (0 – 7) (Sunday=0 or 7)
+  # | | | | |
+  # * * * * * command to be executed
+</code></pre></div>    </div>
+    <h2 id="3crontab文件的一些例子">3，crontab文件的一些例子：</h2>
+  </li>
+</ul>
+
+<blockquote>
+  <p>1 简单打印</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+每天早上6点 
+0 6 * * * echo "Good morning." &gt;&gt; /tmp/test.txt //注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。
+
+每两个小时 
+0 */2 * * * echo "Have a break now." &gt;&gt; /tmp/test.txt  
+
+晚上11点到早上8点之间每两个小时和早上八点 
+0 23-7/2，8 * * * echo "Have a good dream" &gt;&gt; /tmp/test.txt
+
+每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点 
+0 11 4 * 1-3 command line
+
+1月1日早上4点 
+0 4 1 1 * command line SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root //如果出现错误，或者有数据输出，数据作为邮件发给这个帐号 HOME=/ 
+
+每小时执行/etc/cron.hourly内的脚本
+01 * * * * root run-parts /etc/cron.hourly
+
+每天执行/etc/cron.daily内的脚本
+02 4 * * * root run-parts /etc/cron.daily 
+
+每星期执行/etc/cron.weekly内的脚本
+22 4 * * 0 root run-parts /etc/cron.weekly 
+
+每月去执行/etc/cron.monthly内的脚本 
+42 4 1 * * root run-parts /etc/cron.monthly 
+
+注意: "run-parts"这个参数了，如果去掉这个参数的话，后面就可以写要运行的某个脚本名，而不是文件夹名。 　 
+
+每天的下午4点、5点、6点的5 min、15 min、25 min、35 min、45 min、55 min时执行命令。 
+5，15，25，35，45，55 16，17，18 * * * command
+
+每周一，三，五的下午3：00系统进入维护状态，重新启动系统。
+00 15 * * 1，3，5 shutdown -r +5
+
+每小时的10分，40分执行用户目录下的innd/bbslin这个指令： 
+10，40 * * * * innd/bbslink 
+
+每小时的1分执行用户目录下的bin/account这个指令： 
+1 * * * * bin/account
+
+每天早晨三点二十分执行用户目录下如下所示的两个指令（每个指令以;分隔）： 
+20 3 * * * （/bin/rm -f expire.ls logins.bad;bin/expire$#@62;expire.1st）　　
+
+每年的一月和四月，4号到9号的3点12分和3点55分执行/bin/rm -f expire.1st这个指令，并把结果添加在mm.txt这个文件之后（mm.txt文件位于用户自己的目录位置）。 
+12,55 3 4-9 1,4 * /bin/rm -f expire.1st$#@62;$#@62;mm.txt 
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>2 nginx示例</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+30 21 * * * /etc/init.d/nginx restart
+每晚的21:30重启 nginx。
+
+45 4 1,10,22 * * /etc/init.d/nginx restart
+每月1、 10、22日的4 : 45重启nginx。
+
+10 1 * * 6,0 /etc/init.d/nginx restart
+每周六、周日的1 : 10重启nginx。
+
+0,30 18-23 * * * /etc/init.d/nginx restart
+每天18 : 00至23 : 00之间每隔30分钟重启nginx。
+
+0 23 * * 6 /etc/init.d/nginx restart
+每星期六的11 : 00 pm重启nginx。
+
+* */1 * * * /etc/init.d/nginx restart
+每一小时重启nginx
+
+* 23-7/1 * * * /etc/init.d/nginx restart
+晚上11点到早上7点之间，每 隔一小时重启nginx
+
+0 11 4 * mon-wed /etc/init.d/nginx restart
+每月的4号与每周一到周三 的11点重启nginx
+
+0 4 1 jan * /etc/init.d/nginx restart
+一月一号的4点重启nginx
+
+*/30 * * * * /usr/sbin/ntpdate 210.72.145.20
+每半小时同步一下时间
+</code></pre></div></div>
+
+<h2 id="4-创建cron脚本">4 创建cron脚本</h2>
+
+<ol>
+  <li>
+    <p>第一步：写cron脚本文件,命名为crontest.cron。
+15,30,45,59 * * * * echo “xgmtest…..” » xgmtest.txt  表示，每隔15分钟，执行打印一次命令</p>
+  </li>
+  <li>
+    <p>第二步：添加定时任务。执行命令 “crontab crontest.cron”。搞定</p>
+  </li>
+  <li>
+    <p>第三步：”crontab -l” 查看定时任务是否成功或者检测/var/spool/cron下是否生成对应cron脚本</p>
+  </li>
+</ol>
+
+<h2 id="将脚本改为可执行针对shellsh文件">将脚本改为可执行（针对shell，.sh文件）</h2>
+
+<blockquote>
+  <p>chmod +x filename</p>
+</blockquote>
+
+<p>引用：</p>
+
+<p>http://blog.csdn.net/u012402276/article/details/51063269
+https://www.cnblogs.com/longjshz/p/5779215.html
+http://blog.csdn.net/edgdvcyz/article/details/53348832</p>
+
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <h2 id="similar_posts">Similar Posts</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2018/11/04/linux-cmd/">linux常用命令
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2018/02/01/about-inner-outer-ip/">工作填坑之内网与外网
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2018/01/13/setup-mysql-inubuntu/">Ubuntu 16.04 下MySQL的安装
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2018/01/13/close-win10-update/">win10 关闭更新
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2018/02/01/about-inner-outer-ip/">工作填坑之内网与外网</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2018/11/01/jekyll/">使用 GitHub Pages + jekyll 的方式建站</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Similar Posts</a></li>
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自青草池塘的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/643435675" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:leihtg@163.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/3115521wh" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/hll643435675" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>     
+            <a href="https://www.linkedin.com/in/gaohaoyang" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>  
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://pages.github.com/" target="_blank">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a>HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

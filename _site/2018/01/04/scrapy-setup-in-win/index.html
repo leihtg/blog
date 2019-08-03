@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>window下python3环境安装scrapy</title>
+    <meta name="description" content="  环境：  初次安装：目录：[TOC]环境：  python3  3.6.4， win7 64位初次安装：  pip install scrapy使用这个命令，在win7 64位是怎么也安装不上去的，因为这已经是第二次了，当这个命令输出完后，会出现一系列的问题。当然了，不用怕，这不是需要解决问题的方法来了嘛。">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4001/2018/01/04/scrapy-setup-in-win/">
+    <link rel="alternate" type="application/rss+xml" title="青草池塘的个人博客" href="http://localhost:4001/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?00d133d240200c67135b6c0f4b687b1a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+    <script>
+    // google analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72449510-4', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">青草池塘的个人博客</a>
+        <small>love coding</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>window下python3环境安装scrapy</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2018-01-04
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>SnakeSon
+                
+            </div>
+            <div class="label-card">
+                <p><i class="fa fa-eye fa-x"></i><span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#爬虫" title="Category: 爬虫" rel="category">爬虫</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#scrapy" title="Tag: scrapy" rel="tag">scrapy</a-->
+        <a href="/tag/#scrapy" title="Tag: scrapy" rel="tag">scrapy</a>&nbsp;
+    
+        <!--a href="/tag/#%E7%88%AC%E8%99%AB" title="Tag: 爬虫" rel="tag">爬虫</a-->
+        <a href="/tag/#爬虫" title="Tag: 爬虫" rel="tag">爬虫</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#环境" id="markdown-toc-环境">环境：</a></li>
+  <li><a href="#初次安装" id="markdown-toc-初次安装">初次安装：</a></li>
+  <li><a href="#打开网站" id="markdown-toc-打开网站">打开网站</a></li>
+  <li><a href="#安装wheel" id="markdown-toc-安装wheel">安装wheel</a></li>
+  <li><a href="#安装whl文件" id="markdown-toc-安装whl文件">安装.whl文件</a></li>
+  <li><a href="#end" id="markdown-toc-end">end</a></li>
+</ul>
+
+<p>目录：</p>
+
+<p>[TOC]</p>
+
+<h2 id="环境">环境：</h2>
+
+<blockquote>
+  <p>python3  3.6.4， win7 64位</p>
+</blockquote>
+
+<h2 id="初次安装">初次安装：</h2>
+
+<blockquote>
+  <p><code class="highlighter-rouge">pip install scrapy</code></p>
+</blockquote>
+
+<p>使用这个命令，在win7 64位是怎么也安装不上去的，因为这已经是第二次了，</p>
+
+<p>当这个命令输出完后，会出现一系列的问题。当然了，不用怕，这不是需要解决问题的方法来了嘛。</p>
+
+<p>可能出现需要下载版本对应的visual studio,但是也太大了，或也可以说下载慢。。。。。。但是，我们可以不用去进行下载，只要进行下面几个文件的安装就可以了。</p>
+
+<h2 id="打开网站">打开网站</h2>
+
+<p>首先你打开这个网站（里面包含了各种编译好的库）：</p>
+<blockquote>
+  <p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml">http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml</a></p>
+</blockquote>
+
+<h2 id="安装wheel">安装wheel</h2>
+
+<blockquote>
+  <p><code class="highlighter-rouge">pip install wheel</code></p>
+</blockquote>
+
+<p>安装成功的界面</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2577413-93cab0d529ca1dba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wheel—success.png" /></p>
+
+<h2 id="安装whl文件">安装.whl文件</h2>
+
+<p>这里需要安装三个.whl文件，而且是全名的安装，</p>
+
+<p>以下三个文件：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2577413-eaf16a31171cd6ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=".whl文件.png" /></p>
+
+<p>中途可能会出现<code class="highlighter-rouge">Failed to build XXXX</code> 或者是<code class="highlighter-rouge">twisted</code>等相关的内容</p>
+
+<p>因为scrapy是基于twisted框架的，所以，twisted框架也需要进行安装</p>
+
+<p>当上面三个文件安装好了：</p>
+
+<p>再次运行：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">scrapy</span> <span class="nx">startproject</span> <span class="nx">pyjy</span>
+</code></pre></div></div>
+
+<p>这样就完成了scrapy在win下python3下的安装</p>
+
+<h2 id="end">end</h2>
+
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                        
+                        <h2 id="similar_posts">Similar Posts</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2018/01/09/python_crawl_words/">News_scrapy_redis 框架系统
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2017/12/13/Ubuntu16.04-pycharm-icon-setting/">Ubuntu16.04设置Pycharm桌面快捷键</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2018/01/09/python_crawl_words/">News_scrapy_redis 框架系统</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Similar Posts</a></li>
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自青草池塘的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/643435675" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:leihtg@163.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/3115521wh" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/hll643435675" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>     
+            <a href="https://www.linkedin.com/in/gaohaoyang" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>  
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://pages.github.com/" target="_blank">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a>HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

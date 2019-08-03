@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>青草池塘的个人博客</title>
+    <description></description>
+    <link>http://localhost:4001/</link>
+    <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 03 Aug 2019 12:35:23 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Aug 2019 12:35:23 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Jekyll/Liquid API 语法文档</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot; id=&quot;markdown-toc-前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+如果你只想快速搭建一个GitHub的静态网站，而暂时没有时间来研究 Jekyll 语法的话，建议直接 Fork 别人的主题源码。
+
+当然，阅读一下之前我记录的一些笔记也可以增长一些知识：
+
+&lt;a href=&quot;http://juke.outofmemory.cn/entry/149446&quot;&gt;&lt;strong&gt;建立 GitHub Pages 静态博客网站&lt;/strong&gt;&lt;/a&gt; 介绍了使用 Jekyll 搭建的 GitHub Pages 操作&lt;br /&gt;
+&lt;a href=&quot;http://juke.outofmemory.cn/entry/149453&quot;&gt;&lt;strong&gt;GitHub Pages Issue&lt;/strong&gt;&lt;/a&gt; 介绍博主在使用 GitHub Pages 的过程中遇到的问题及解决方法  &lt;br /&gt;
+&lt;a href=&quot;http://juke.outofmemory.cn/entry/149460&quot;&gt;&lt;strong&gt;讲解 Markdown&lt;/strong&gt;&lt;/a&gt; 介绍了标准的 Markdown 语法及相关的扩展语法
+现在博主想要整理一份相对完整的Jekyll语法，方便以后查阅参考。
+
+具体官方文档地址请参考 &lt;a href=&quot;http://jekyllrb.com/docs/home/&quot;&gt;&lt;strong&gt;Jekyll Documentation&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+这里主要介绍关于 Jekyll 的 API 语法，不是翻译官网内容。
+
+</description>
+        <pubDate>Sat, 03 Aug 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/08/03/Jekyll%E8%AF%AD%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/08/03/Jekyll%E8%AF%AD%E6%B3%95/</guid>
+        
+        <category>jekyll</category>
+        
+        <category>website</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>安装MySQL</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#在ubuntu中安装mysql&quot; id=&quot;markdown-toc-在ubuntu中安装mysql&quot;&gt;在ubuntu中安装mysql&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;在ubuntu中安装mysql&quot;&gt;在ubuntu中安装mysql&lt;/h2&gt;
+
+ubuntu上安装mysql非常简单只需要几条命令就可以完成。
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;sudo apt-get install mysql-server&lt;/li&gt;
+    &lt;li&gt;sudo apt-get install mysql-client&lt;/li&gt;
+    &lt;li&gt;sudo apt-get install libmysqlclient-dev&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+第三个是本地开发时动态链接库，可以不安装
+
+</description>
+        <pubDate>Thu, 08 Nov 2018 15:30:21 +0800</pubDate>
+        <link>http://localhost:4001/2018/11/08/mysql-install/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/11/08/mysql-install/</guid>
+        
+        <category>mysql</category>
+        
+        
+        <category>MySQL</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>
+You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.
+
+To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.
+
+</description>
+        <pubDate>Sun, 04 Nov 2018 15:30:21 +0800</pubDate>
+        <link>http://localhost:4001/2018/11/04/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/11/04/welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>linux常用命令</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#新增用户&quot; id=&quot;markdown-toc-新增用户&quot;&gt;新增用户&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;新增用户&quot;&gt;新增用户&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;语法：
+useradd [-mMnr][-c &amp;lt;备注&amp;gt;][-d &amp;lt;登入目录&amp;gt;][-e &amp;lt;有效期限&amp;gt;][-f &amp;lt;密码缓存天数&amp;gt;][-g &amp;lt;群组&amp;gt;][-G &amp;lt;群组&amp;gt;][-s &amp;lt;shell&amp;gt;][-u &amp;lt;uid&amp;gt;][用户帐号]
+
+参数说明：
+-c&amp;lt;备注&amp;gt; 　加上备注文字。备注文字会保存在passwd的备注栏位中。
+-d&amp;lt;登入目录&amp;gt; 　指定用户登入时的启始目录。
+-D 　变更预设值．
+-e&amp;lt;有效期限&amp;gt; 　指定帐号的有效期限。
+-f&amp;lt;缓存天数&amp;gt; 　指定在密码过期后多少天即关闭该帐号。
+-g&amp;lt;群组&amp;gt; 　指定用户所属的群组。
+-G&amp;lt;群组&amp;gt; 　指定用户所属的附加群组,多个的话用逗号分隔
+-m 　自动建立用户的登入目录。
+-M 　不要自动建立用户的登入目录。
+-n 　取消建立以用户名称为名的群组．
+-r 　建立系统帐号。
+-s&amp;lt;shell&amp;gt;　 　指定用户登入后所使用的shell。
+-u&amp;lt;uid&amp;gt; 　指定用户ID。指定用户ID号。该值在系统中必须是唯一的。0~499默认是保留给系统用户账号使用的，所以该值必须大于499。
+
+例：
+useradd -d /home/lht -m -s /bin/bash lht
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 04 Nov 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/11/04/linux-cmd/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/11/04/linux-cmd/</guid>
+        
+        <category>Linux</category>
+        
+        
+        <category>Linux</category>
+        
+      </item>
+    
+      <item>
+        <title>使用 GitHub Pages + jekyll 的方式建站</title>
+        <description>
+使用 GitHub Pages + jekyll 的方式建站
+
+_config.yml ：全局配置文件
+
+_posts :放文章的文件夹
+
+</description>
+        <pubDate>Thu, 01 Nov 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/11/01/jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/11/01/jekyll/</guid>
+        
+        <category>建站</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>CentOS7定时任务详解</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot; id=&quot;markdown-toc-前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#crontab&quot; id=&quot;markdown-toc-crontab&quot;&gt;crontab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+工作中需要开启一个定时任务：每天晚上2点进行爬虫代码的运行，这不得不去学习一下linux 下的定时任务crontab
+
+&lt;h2 id=&quot;crontab&quot;&gt;crontab&lt;/h2&gt;
+
+yum install crontabs
+
+说明：
+/sbin/service crond start //启动服务
+/sbin/service crond stop //关闭服务
+/sbin/service crond restart //重启服务
+/sbin/service crond reload //重新载入配置
+查看crontab服务状态：service crond status
+手动启动crontab服务：service crond start
+查看crontab服务是否已设置为开机启动，执行命令：ntsysv
+加入开机自动启动:
+chkconfig crond on
+
+</description>
+        <pubDate>Sat, 10 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/02/10/centos-crontab/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/02/10/centos-crontab/</guid>
+        
+        <category>centos7</category>
+        
+        <category>crontab</category>
+        
+        <category>Linux</category>
+        
+        <category>工具软件</category>
+        
+        
+        <category>Linux</category>
+        
+      </item>
+    
+      <item>
+        <title>工作填坑之内网与外网</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#概念&quot; id=&quot;markdown-toc-概念&quot;&gt;概念&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
+
+内网：
+
+&lt;blockquote&gt;
+  内网也就是局域网，内网的计算机以NAT（&lt;a href=&quot;https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2&quot;&gt;网络地址转换&lt;/a&gt;）协议，通过一个公共的&lt;a href=&quot;https://baike.baidu.com/item/%E7%BD%91%E5%85%B3&quot;&gt;网关&lt;/a&gt;访问Internet。内网的计算机可向Internet上的其他计算机发送连接请求，但Internet上其他的计算机无法向内网的计算机发送连接请求。
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  最直观的就是像网吧，公司内部的电脑用交换机，HUB，路由连起来的
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/02/01/about-inner-outer-ip/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/02/01/about-inner-outer-ip/</guid>
+        
+        <category>MongoDB</category>
+        
+        <category>Redis</category>
+        
+        <category>工具软件</category>
+        
+        
+        <category>工具软件</category>
+        
+      </item>
+    
+      <item>
+        <title>Ubuntu 16.04 下MySQL的安装</title>
+        <description>
+1， 打开终端：
+&lt;blockquote&gt;
+  sudo apt-get install mysql-server
+&lt;/blockquote&gt;
+
+2 ，接下来会让你选择y/n, 这里你选择y,
+
+3 ，这里会出现一个让你输入mysql-server的密码，输入完后如果鼠标点击不了，可以使用Tab键+enter键继续下一步
+
+4 ，接下来，会继续让我们输入一次密码
+
+</description>
+        <pubDate>Sat, 13 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/01/13/setup-mysql-inubuntu/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/01/13/setup-mysql-inubuntu/</guid>
+        
+        <category>Linux</category>
+        
+        <category>ubuntu16.04</category>
+        
+        <category>工具软件</category>
+        
+        
+        <category>MySQL</category>
+        
+      </item>
+    
+      <item>
+        <title>win10 关闭更新</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot; id=&quot;markdown-toc-前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#操作步骤&quot; id=&quot;markdown-toc-操作步骤&quot;&gt;操作步骤&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+因为自己的电脑装了双系统（win10 跟Ubuntu16.04），在win10下，有时候每次关机的时候都说要进行更新后进行关机，就是自动更新功能，现在的选项中没有关闭自动更新的选项了，这是一个bug，微软要强制更新。
+
+我就忍受不了自动更新，会拉取网络，影响我们的上网体验，但是我们不要他自动更新，那怎么办呢，其实还是有解决方法的，下面就介绍怎么关闭自动更新功能！（ps：百度有些人写的其实是win8的自动更新，根本就不是win10的，我这个才是win10的处理方法）希望能帮到你们。
+
+&lt;h2 id=&quot;操作步骤&quot;&gt;操作步骤&lt;/h2&gt;
+
+1 右键点击左下角微软按钮，找到“运行”   也可用键盘的win+R
+
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2577413-07f3d54cc3ce1538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;图片.png&quot; /&gt;
+
+2 在运行处输入 “services.msc”   点击确定。
+
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2577413-2df616c88439415a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;图片.png&quot; /&gt;
+
+</description>
+        <pubDate>Sat, 13 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/01/13/close-win10-update/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/01/13/close-win10-update/</guid>
+        
+        <category>win10</category>
+        
+        <category>工具软件</category>
+        
+        
+        <category>win10</category>
+        
+      </item>
+    
+      <item>
+        <title>News_scrapy_redis 框架系统</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot; id=&quot;markdown-toc-前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#设计目标&quot; id=&quot;markdown-toc-设计目标&quot;&gt;设计目标&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+该文档针对爬虫系统设计目标中相应的场景给出技术方案
+
+&lt;h2 id=&quot;设计目标&quot;&gt;设计目标&lt;/h2&gt;
+
+1、代码复用，功能模块化。可以支持上千个网站的数据爬取；
+
+2、易扩展。爬虫框架易扩展，爬取规则、解析规则、入库规则易扩展，支持框架切换；
+
+3、健壮性、可维护性。对数据爬取过程中的各种异常，例如：断网、反爬升级、爬“脏数据”等，需要实时的监控，以及给出准确的定位。异常处理以及降级措施需要完善；
+
+4、后续扩展为分布式结构；
+
+5、支持功能模块的易调整；
+
+</description>
+        <pubDate>Tue, 09 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2018/01/09/python_crawl_words/</link>
+        <guid isPermaLink="true">http://localhost:4001/2018/01/09/python_crawl_words/</guid>
+        
+        <category>scrapy_redis</category>
+        
+        <category>爬虫</category>
+        
+        
+        <category>爬虫</category>
+        
+      </item>
+    
+  </channel>
+</rss>
