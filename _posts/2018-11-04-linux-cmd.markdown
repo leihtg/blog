@@ -33,11 +33,11 @@ author: leihtg
     例：
     useradd -d /home/lht -m -s /bin/bash lht
 
-###删除用户
+### 删除用户
 
     userdel -f -r lht
     
-###修改用户组别
+### 修改用户组别
     
     gpasswd -a lht sudo         
 	

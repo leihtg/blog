@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "使用 GitHub Pages + jekyll 的方式建站"
+categories: jekyll
 tags:  建站
 author: leihtg
 ---
