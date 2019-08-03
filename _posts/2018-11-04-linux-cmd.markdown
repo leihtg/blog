@@ -33,6 +33,8 @@ author: leihtg
     例：
     useradd -d /home/lht -m -s /bin/bash lht
 
+
+
 ### 删除用户
 
     userdel -f -r lht

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "安装mysql"
+title:  "安装MySQL"
 date:   2018-11-08 15:30:21 +0800
 categories: MySQL
 tags:  mysql
@@ -19,6 +19,8 @@ ubuntu上安装mysql非常简单只需要几条命令就可以完成。
 > 3. sudo apt-get install libmysqlclient-dev
 
 第三个是本地开发时动态链接库，可以不安装
+
+
 
 ### 设置MySQL允许远程访问
 
