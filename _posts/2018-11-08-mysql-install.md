@@ -55,9 +55,20 @@ ubuntu上安装mysql非常简单只需要几条命令就可以完成。
     代码如下:
     
     update user set host='%' where user='root' and host='localhost';
-   
+    
+4. 设置数据库表大小写不敏感
+    
+    SHOW VARIABLES LIKE "%case%";
+    
+    Variable_name           Value   
+    ----------------------  --------
+    lower_case_file_system  OFF     
+    lower_case_table_names  0       
+    
+    在 mysqld.cnf 中加入一行
+    > lower_case_table_names=1    
         
-4. 重启数据库
+5. 重启数据库
    
    > sudo service mysql restart
    
