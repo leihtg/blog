@@ -54,7 +54,7 @@ tags: JavaScript Ajax URL HistoryApi pushState pjax
 
 如下图，Chrome的历史记录：
 
-![chrome history](http://ww2.sinaimg.cn/large/7011d6cfjw1ezb16fn2bfj20k008htan.jpg)
+![chrome history]({{site.baseurl}}/assets/20151231/history_api.jpg)
 
 下面介绍怎么在这些历史记录中跳转，但要**注意**，上图中的浏览器历史记录和本文说的 history 还不太同。
 

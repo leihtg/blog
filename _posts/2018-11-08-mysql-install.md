@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "安装MySQL"
+title:  "Ubuntu下安装MySQL"
 date:   2018-11-08 15:30:21 +0800
 categories: MySQL
 tags:  mysql
