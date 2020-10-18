@@ -1,0 +1,101 @@
+@startmindmap
+title 架构师成长路线
+
+* java架构师成长路线
+
+** java底层专题
+
+*** JVM
+**** 内存模型、字节码详解
+**** 类加载机制详解
+**** 垃圾回收器详解
+**** GC日志详解
+**** JVM性能调优实战
+
+*** 并发底层
+**** 基于操作系统、JDK、JVM源码详解Thread底层实现
+**** 基于操作系统、JDK、JVM源码详解Synchronized、volatile底层实现
+***** 无锁
+***** 偏向锁
+***** 轻量级锁
+***** 重量级锁
+
+**** 并发工具类源码
+***** Atomic系列源码解析
+***** Locks系列源码解析
+
+***** ConcurrentHashMap源码解析
+****** JDK1.7
+****** JDK1.8
+
+***** ForkJoin源码解析
+***** CountDownLatch、CyclicBarrier、Semaphore等并发工具类源码解析
+
+**** 线程池源码
+***** CachedThreadPool
+***** FixedThreadPool
+***** SingleThreadPool
+***** ScheduleThreadPool
+
+**** JDK常用工具类源码解析
+***** HashMap
+****** JDK1.7
+****** JDK1.8
+***** LinkedHashMap、ArrayList等集合
+**** JDK新特征
+***** JDK8新特性
+***** JDK9-13新特性
+
+** 开发框架专题
+*** Spring
+**** Spring AOP源码实现
+**** Spring IOC源码实现
+**** BeanFactory和ApplicationContext源码实现
+**** SpringBean的生命周期源码解析
+**** 手写Spring框架
+
+*** SpringMVC
+**** SpringMVC启动流程源码解析
+**** SpringMVC处理请求源码解析
+**** 手写SpringMVC框架
+
+*** SpringBoot
+**** SpringBoot启动流程源码分析、源码解析
+**** SpringBoot中零配置的底层实现原理源码解析
+**** SpringBoot中的日志系统源码解析
+**** SpringBoot实现热部署的几种方式
+**** 手写SpringBoot框架
+
+*** Mybatis
+**** Mybatis初始化流程源码解析
+**** Mybatis执行流程源码解析
+**** Mybatis缓存机制源码解析
+**** Mybatis插件式开发
+**** MybatisPlus
+
+*** Shiro
+*** Shiro中的组件使用以及源码实现
+*** Shiro的工作流程源码实现
+
+** 响应式编程专题
+*** 响应式模型
+**** Actor模型
+**** Reactor模型
+**** 响应式模型与线程模型对比分析
+
+*** Akka
+**** Akka和SpringCloud的对比
+**** Akka框架应用全面分析
+***** 远程调用
+***** 负载均衡
+***** 熔断器
+***** 路由
+***** 集群
+**** Akka适用场景
+
+*** Spring WebFlux
+**** Stream流的编程概念、流的创建和流的操作、以及并行流
+**** 异步Servlet、RouterFunction的运行机制和原理
+**** View Resolution、webflux的视图裁决、Web Security,http缓存
+
+@endmindmap
