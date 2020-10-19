@@ -98,4 +98,203 @@ title 架构师成长路线
 **** 异步Servlet、RouterFunction的运行机制和原理
 **** View Resolution、webflux的视图裁决、Web Security,http缓存
 
+
+** 网络编程专题
+*** Socket
+**** 基于JDK、操作系统源码分析Socket底层实现
+**** Java Socket与操作系统Socket的关系
+**** Socket与TCP、UDP协议的关系
+
+*** IO模型
+**** BIO、NIO、AIO设计思想以及原理
+
+*** Netty
+**** Netty整体架构源码分析
+**** Netty底层源码解析
+**** 基于Netty实现聊天室
+
+*** Tomcat
+**** Tomcat整体架构分析
+**** Tomcat源码解析
+**** Tomcat7、8、9新特性分析
+
+*** Nginx
+**** Nginx是如何处理一个请求的
+**** Nginx负载均衡策略底层分析
+**** Nginx在架构中的实际应用案例分析
+
+** 分布式专题
+*** 分布式理论
+**** CAP、BASE理论
+**** 2PC、3PC、XA协议
+**** Paxos、Raft、Zab协议
+**** 各个协议分别有什么优点和缺点，分别适合什么场景
+
+*** Zookeeper
+**** Zookeeper基于使用与常见客户端使用
+**** ZAB协议解析
+**** 快速领导者选举流程源码解析
+**** 单机、集群模式下处理请求源码解析
+**** Zookeeper分布式锁实现
+
+*** Dubbo
+**** Dubbo基本功能特性使用
+**** Dubbo服务导出、引入、调用源码解析
+**** Dubbo3特性
+
+*** 消息队列
+**** RocketMq
+***** RocketMq整体架构分析
+***** RocketMq发送消息流程原理分析
+***** RocketMq主从同步机制分析
+***** RocketMq的延迟投递与自定义投递
+***** RocketMq持久化机制
+
+**** Kafka
+***** Kafka基于Zookeeper搭建高可用集群
+***** Kafka选举流程分析
+***** Kafka分区再均衡原理分析
+***** Kafka如何确保消息不丢失
+
+**** RabbitMq
+***** RabbitMq搭建高可用集群
+***** RabbitMq发送消息流程原理分析
+***** RabbitMq消息确认机制原理分析
+
+**** 分布式扩展
+***** 分布式锁
+******_ 分布式锁的几种实现方式
+***** 分布式事务
+****** 阿里Seata
+******* AT模式
+******* TCC模式
+****** 华为ServiceComb
+*******_ Saga模式
+***** 分布式定时任务
+******_ ElasticJob
+***** 分布式搜索
+****** ElasticSearch
+******* ELK搭建
+******* Kibana
+******* FileBeat
+******* LogStash
+
+
+** 微服务专题
+*** Spring Cloud Netflix
+****_ 注册中心 Eureka
+****_ 配置中心 Config
+****_ 服务调用 Feign
+****_ 服务网关 Zuul
+****_ 负载均衡 Ribbon
+****_ 熔断降级 Hystrix
+****_ 消息总线 Bus
+*** Spring Cloud Alibaba
+**** 注册中心 Nacos
+**** 配置中心 Nacos、Apollo
+**** 服务调用 Dubbo
+**** 熔断降级 Sentinel
+*** 服务网格（Service Mesh）
+**** lstio
+***** Proxy代理
+***** Mixer混合器
+***** Pilot引导
+***** Citadel堡垒
+***** Galley
+**** SOFAMesh
+***** MOSN
+***** SOFAPilot
+***** SOFARPC
+
+
+** 数据库专题
+*** Mysql
+**** Innodb页结构、行格式、B+树索引底层原理
+**** Explain详解与查询优化器原理分析
+**** 事务隔离级别、MVCC底层原理分析
+**** 表锁、行锁、意向锁、读锁、写锁、乐观锁、悲观锁底层原理分析
+**** 慢查询优化与性能调优
+*** Mysql集群
+**** Mysql集群模式与适用场景
+**** Mysql集群数据同步方式与优缺点对比
+*** 分库分表
+**** Mycat
+**** Sharding-jdbc
+**** 分库分表方式以及优缺点分析
+*** Redis
+**** Redis常用数据结构与api
+**** Redis单线程模型、持久化原理解析
+**** Redis哨兵模式与集群
+**** Redis应用
+***** 缓存穿透
+***** 缓存雪崩
+***** 缓存击穿
+***** 分布式锁
+*** Mongodb
+**** Mongodb应用场景
+**** 常用命令
+**** 底层原理分析
+**** Mongodb4.2分布式事务实现原理
+*** 分布式数据库
+**** OceanBase
+***** 什么是zone、资源池、TableGroup
+***** OceanBase的架构
+**** 什么是分布式数据库
+**** 为什么需要分布式数据库
+
+
+** Devops专题
+*** Linux
+**** 常用命令
+**** Shell脚本
+**** 权限管理
+**** 安全维护
+*** 代码管理
+**** Git
+**** GitLab
+*** 依赖管理
+**** Ant
+**** Maven
+**** Gradle
+*** 容器
+**** Docker
+**** Kubernetes
+*** 可持续集成
+**** Jenkins
+**** 搭建一套可持续集成架构
+*** 应用部署
+**** 蓝绿部署
+**** 滚动部署
+**** 灰度发布、金丝雀部署
+*** 系统监控
+**** Prometheus
+**** Grafana
+
+
+** 项目实战专题
+*** 架构设计原则
+**** 单一职责
+**** 开闭原则
+**** 里氏替换原则
+**** 接口隔离原则
+**** 依赖反转原则
+*** 领域驱动设计（DDD）
+**** 什么是领域驱动设计
+**** 为什么需要领域驱动设计
+**** 如何落实领域驱动设计
+*** 微服务架构设计与实战
+**** 组件化
+**** 松耦合
+**** 自治
+**** 去中心化
+*** 中台架构设计与实战
+**** 什么是中台
+**** 中台与前台、后台的关系
+**** 中台的分类
+**** 如何落地中台
+*** 秒杀系统设计与实战
+**** 典型的三高系统
+**** 超买超卖的问题
+**** 订单持久化问题
+
 @endmindmap
