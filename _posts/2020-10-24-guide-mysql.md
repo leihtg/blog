@@ -242,6 +242,8 @@ InnoDB适合的场景
 
       可见性判断
 
+![]({{site.baseurl}}/assets/20201024/微信截图_20201024194623.png)
+
 ##### 常见问题
 
 1. MyISAM与InnoDB关于锁方面的区别是什么
@@ -275,3 +277,4 @@ InnoDB适合的场景
    
 
 3. ##### 统计相关：count, sum, max, min, avg
+ount, sum, max, min, avg
