@@ -1,0 +1,24 @@
+@startuml
+title springmvc的filter加载流程
+
+participant "TomcatStarter" as tomcat
+participant "AnnotationConfigServletWebServerApplicationContext" as servletContext
+
+tomcat -> servletContext : onStartup
+
+activate servletContext
+
+servletContext -> RegistrationBean: beans.onStartup(servletContext)
+note left
+ beans = getServletContextInitializerBeans()
+ 包括(ServletContextInitializer,Servlet,Filter,EventListener)
+ ServletContext servletContext 这个是单例的"
+end note
+
+deactivate servletContext
+
+RegistrationBean -> DynamicRegistrationBean: onStartup
+DynamicRegistrationBean -> AbstractFilterRegistrationBean: register
+AbstractFilterRegistrationBean -> ApplicationFilterRegistration: configure
+
+@enduml
