@@ -35,10 +35,13 @@ org.springframework.web.method.support.InvocableHandlerMethod#getMethodArgumentV
 
 org.springframework.web.method.support.HandlerMethodArgumentResolverComposite#resolveArgument  
 逐个解析参数  
+HandlerMethodArgumentResolver resolver = getArgumentResolver(parameter);  
+使用不同的resolver解析
+
+HandlerMethodArgumentResolver -> resolveArgument  
 
 org.springframework.web.method.annotation.ModelAttributeMethodProcessor#resolveArgument  
 在这个方法里面实现了参数值的注入  
-
 
 org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor#bindRequestParameters
 
