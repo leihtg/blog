@@ -66,4 +66,4 @@ iBATIS一词来源于“internet”和“abatis”的组合，是一个基于Jav
 
 
 
-![](C:\Users\leihtg\Desktop\20141028140852531.png)
+![]({{site.baseurl}}/assets/20201219/20141028140852531.png)
