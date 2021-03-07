@@ -10,7 +10,7 @@ author: leihtg
 {:toc}
 
 
-### 新增用户
+#### 新增用户
 
     语法：
     useradd [-mMnr][-c <备注>][-d <登入目录>][-e <有效期限>][-f <密码缓存天数>][-g <群组>][-G <群组>][-s <shell>][-u <uid>][用户帐号]
@@ -35,22 +35,59 @@ author: leihtg
 
 
 
-### 删除用户
+#### 删除用户
 
     userdel -f -r lht
-    
-### 修改用户组别
-    
+
+#### 修改用户组别
+
     gpasswd -a lht sudo         
-	
-### 使用户有sudo权限
+
+#### 使用户有sudo权限
 
 	/etc/sudoers
-	
-### Linux系统下Shell重复执行上条命令的 4 种方法： 
+
+#### Linux系统下Shell重复执行上条命令的 4 种方法： 
 
 - 1、使用上方向键，并回车执行。
 - 2、按 !! 并回车执行。 
 - 3、输入 !-1 并回车执行。 
 - 4、按 Ctrl+P 并回车执行。
 	
+#### 查看系统参数
+
+1. 查看cpu信息
+   
+        lscpu 或 cat /proc/cpuinfo 
+    
+2. 查看cpu位数
+
+        getconf LONG_BIT
+    
+3. 查看MEM信息
+
+        free
+        free -m
+        cat /proc/meminfo
+    
+4. 查看系统内核版本
+
+        uname -a
+        uname -r
+        more /etc/*release
+        more /etc/issue
+        more /proc/version        
+    
+5. 查看磁盘信息
+
+        lsblk
+        fdisk -l
+        df -k        
+    
+6. 查看网络信息
+
+        cat /etc/sysconfig/network-scripts/ifcfg-eth0
+        cat /etc/sysconfig/network-scripts/ifcfg-l0
+        ifconfig
+        查看网络带宽：
+        ethtool eth0，查看SPEED参数        

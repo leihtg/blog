@@ -7,7 +7,7 @@ author: leihtg
 
 ---
 
-
+* content
 {:toc}
 
 #### **红黑树的性质**：  

@@ -8,7 +8,8 @@ author: leihtg
 
 
 
-[toc]
+* content
+{:toc}
 
 springboot集成了各种第三方组件，让我们使用起来特别方便，于是想一探究竟，看看它是怎么集成的。
 
